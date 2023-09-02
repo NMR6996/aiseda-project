@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block title %} Komandamız {% endblock %}
+{% block content %}
+    <br>
+    <div class="container py-3 py-lg-5">
+        <div class="fables-team my-3">             
+            <h3 class="fables-second-text-color mb-5 font-weight-bold"> Komandamız </h3>     
+            <div class="row">
+                {%for team in teams%}
+                <div class="col-6 col-md-3 mb-4 mb-lg-0">
+                    <div class="card fables-team-block fables-second-hover-text-color">
+                        <div class="image-container shine-effect">
+                            <a href="#"><img class="w-100" src="{{team.image.url}}" alt="Card image cap"></a>
+                        </div>
+                        <div class="card-body">
+                            <h5><a href="#" class="font-20 semi-font fables-forth-text-color fables-second-hover-color team-name">{{team.full_name}}</a></h5>
+                            <p class="font-13 fables-forth-text-color my-1 font-italic">{{team.job}}</p> 
+                            <ul class="nav fables-team-social-links mt-3"> 
+                                <li><a href="#" target="_blank"><span class="fables-icongoogle-icon fables-forth-text-color fables-fifth-border-color fables-team-social-icon"></span></a></li>
+                                <li><a href="#" target="_blank"><span class="fables-iconwhatapp-icon fables-forth-text-color fables-fifth-border-color fables-team-social-icon"></span></a></li>   
+                                <li><a href="#" target="_blank"><span class="fables-icontwitter-icon fables-forth-text-color fables-fifth-border-color fables-team-social-icon"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>  
+        </div>  
+    </div>
+{%endblock%}
